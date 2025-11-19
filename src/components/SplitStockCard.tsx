@@ -10,10 +10,12 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
     <div className="px-4 py-3">
       <div className="max-w-lg mx-auto">
         <div
-          className="relative bg-cover bg-center bg-no-repeat rounded-lg overflow-hidden"
+          className="relative rounded-lg overflow-hidden"
           style={{
             backgroundImage: 'url(/top.png)',
-            backgroundSize: 'cover'
+            backgroundSize: '100% 100%',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
           }}
         >
           <div className="relative z-10 px-6 py-8">
