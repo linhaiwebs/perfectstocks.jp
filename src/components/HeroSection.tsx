@@ -20,7 +20,7 @@ export default function HeroSection({ stockCode = '----', stockName = '', onDiag
             />
           </div>
 
-          <div className="text-center mb-4 mt-8">
+          <div className="text-center mb-4 mt-16">
             <h1 className="inline-block">
               <span
                 className="font-bold text-black"
