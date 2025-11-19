@@ -1,5 +1,3 @@
-import GradientButton from './GradientButton';
-
 interface PulsingButtonProps {
   onClick: () => void;
   stockName?: string;
@@ -21,30 +19,19 @@ export default function PulsingButton({ onClick, stockName = '', disabled = fals
           disabled={disabled}
           className="relative group disabled:opacity-50 disabled:cursor-not-allowed w-full transform transition-all duration-300 hover:scale-105 active:scale-95"
         >
-          <GradientButton className="animate-button-pulse animate-glow-ring-blue">
-            <div className="relative px-8 py-5 overflow-hidden" style={{ willChange: 'transform' }}>
-              <div
-                className="absolute inset-0 opacity-30 animate-gradient-shift"
-                style={{
-                  background: 'linear-gradient(90deg, rgba(59,130,246,0.4) 0%, rgba(96,165,250,0.6) 25%, rgba(147,197,253,0.4) 50%, rgba(96,165,250,0.6) 75%, rgba(59,130,246,0.4) 100%)',
-                  backgroundSize: '200% 100%'
-                }}
-              />
-
-              <div
-                className="absolute inset-0 w-[30%] h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:animate-[shimmer-sweep_2s_ease-in-out]"
-                style={{
-                  animation: 'shimmer-sweep 4s ease-in-out infinite',
-                  animationDelay: '1s'
-                }}
-              />
-
-              <div className="relative flex flex-col items-center justify-center gap-2">
-                <span className="font-black text-lg text-white drop-shadow-lg">{buttonText}</span>
-                <span className="text-xs text-blue-100 font-semibold">※教育・学習用の情報表示</span>
-              </div>
+          <div
+            className="relative w-full h-24 bg-cover bg-center bg-no-repeat flex items-center justify-center"
+            style={{
+              backgroundImage: 'url(/button.png)',
+              backgroundSize: 'contain',
+              backgroundPosition: 'center'
+            }}
+          >
+            <div className="relative flex flex-col items-center justify-center gap-1 px-8">
+              <span className="font-black text-lg text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{buttonText}</span>
+              <span className="text-xs text-white font-semibold drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">※教育・学習用の情報表示</span>
             </div>
-          </GradientButton>
+          </div>
         </button>
       </div>
     </div>
