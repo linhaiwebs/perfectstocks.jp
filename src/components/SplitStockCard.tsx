@@ -47,12 +47,12 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
 
               <div className="flex flex-col items-center justify-start">
                 <div className="relative">
-                  <img src="/bot.png" alt="bot" className="w-32 h-auto" />
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-1">
-                    <div className="text-red-600 text-xl font-black text-center mb-1">
+                  <img src="/bot.png" alt="bot" className="w-32 h-auto relative z-0" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+                    <div className="text-red-600 text-xl font-black text-center">
                       {info.code}
                     </div>
-                    <div className="text-xs text-gray-700 font-bold text-center whitespace-nowrap">
+                    <div className="text-xs text-gray-700 font-bold text-center whitespace-nowrap mt-1">
                       {info.change} {info.changePercent}
                     </div>
                   </div>
