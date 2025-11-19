@@ -353,6 +353,11 @@ export default function NewHome() {
 
         {stockData && diagnosisState === 'initial' && (
           <>
+            <ScrollingHistoryData
+              prices={stockData.prices}
+              stockName={stockData.info.name}
+            />
+
             <SplitStockCard
               info={stockData.info}
               latestPrice={stockData.prices[0]}
@@ -362,11 +367,6 @@ export default function NewHome() {
               onClick={runDiagnosis}
               stockName={stockData.info.name}
               disabled={!hasRealData}
-            />
-
-            <ScrollingHistoryData
-              prices={stockData.prices}
-              stockName={stockData.info.name}
             />
 
             <PulsingButton
