@@ -25,7 +25,7 @@ export default function HeroSection({ stockCode = '----', stockName = '', onDiag
               <span
                 className="font-bold text-black"
                 style={{
-                  fontSize: '1.25rem',
+                  fontSize: '2rem',
                   fontFamily: "'Kozuka Gothic Pr6N', 'Noto Sans JP', sans-serif"
                 }}
               >
@@ -34,7 +34,7 @@ export default function HeroSection({ stockCode = '----', stockName = '', onDiag
               <span
                 className="font-bold"
                 style={{
-                  fontSize: '2rem',
+                  fontSize: '3rem',
                   color: '#ec4899',
                   fontFamily: "'Kozuka Gothic Pr6N', 'Noto Sans JP', sans-serif",
                   textShadow: '2px 2px 4px rgba(255, 255, 255, 0.6), -1px -1px 2px rgba(255, 255, 255, 0.4)'
