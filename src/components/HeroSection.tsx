@@ -1,6 +1,3 @@
-import RadarAnimation from './RadarAnimation';
-import GradientButton from './GradientButton';
-
 interface HeroSectionProps {
   stockCode?: string;
   stockName?: string;
@@ -14,17 +11,50 @@ export default function HeroSection({ stockCode = '----', stockName = '', onDiag
   return (
     <div className="relative w-full">
       <div className="w-full px-4 py-6 flex flex-col items-center">
-        <div className="relative w-full max-w-md h-64 md:h-80 mx-auto flex items-center justify-center">
-          <h1
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white font-bold text-2xl md:text-3xl lg:text-4xl z-20 whitespace-nowrap"
-            style={{
-              fontFamily: "'Kozuka Gothic Pr6N', 'Noto Sans JP', sans-serif",
-              textShadow: '0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4)'
-            }}
-          >
-            銘柄情報分析
-          </h1>
-          <RadarAnimation className="w-full h-full" />
+        <div className="w-full max-w-4xl mx-auto mb-8">
+          <div className="flex justify-end mb-6">
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="h-12 w-auto object-contain"
+            />
+          </div>
+
+          <div className="text-center mb-4">
+            <h1 className="inline-block">
+              <span
+                className="font-bold text-black"
+                style={{
+                  fontSize: '1.25rem',
+                  fontFamily: "'Kozuka Gothic Pr6N', 'Noto Sans JP', sans-serif"
+                }}
+              >
+                銘柄基本
+              </span>
+              <span
+                className="font-bold"
+                style={{
+                  fontSize: '2rem',
+                  color: '#ec4899',
+                  fontFamily: "'Kozuka Gothic Pr6N', 'Noto Sans JP', sans-serif",
+                  textShadow: '2px 2px 4px rgba(255, 255, 255, 0.6), -1px -1px 2px rgba(255, 255, 255, 0.4)'
+                }}
+              >
+                情報
+              </span>
+            </h1>
+          </div>
+
+          <div className="text-center">
+            <h2
+              className="text-2xl font-bold text-black"
+              style={{
+                fontFamily: "'Kozuka Gothic Pr6N', 'Noto Sans JP', sans-serif"
+              }}
+            >
+              銘柄無料診断
+            </h2>
+          </div>
         </div>
       </div>
 
