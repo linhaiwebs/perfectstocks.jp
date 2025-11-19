@@ -27,9 +27,8 @@ export default function PulsingButton({ onClick, stockName = '', disabled = fals
               backgroundPosition: 'center'
             }}
           >
-            <div className="relative flex flex-col items-center justify-center gap-1 px-8">
+            <div className="relative flex items-center justify-center px-8">
               <span className="font-black text-lg text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{buttonText}</span>
-              <span className="text-xs text-white font-semibold drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">※教育・学習用の情報表示</span>
             </div>
           </div>
         </button>
