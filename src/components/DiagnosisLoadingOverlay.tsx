@@ -57,7 +57,7 @@ export default function DiagnosisLoadingOverlay({
       }`}
       style={{
         touchAction: 'none',
-        background: 'linear-gradient(135deg, rgba(255, 140, 66, 0.95) 0%, rgba(255, 167, 38, 0.95) 50%, rgba(255, 183, 77, 0.95) 100%)'
+        background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.95) 0%, rgba(219, 39, 119, 0.95) 50%, rgba(244, 114, 182, 0.95) 100%)'
       }}
     >
       <div className={`w-full max-w-lg transition-transform duration-500 ${
@@ -67,7 +67,7 @@ export default function DiagnosisLoadingOverlay({
           <div
             className="absolute inset-0 opacity-10"
             style={{
-              background: 'linear-gradient(135deg, rgba(255,140,66,0.3) 0%, rgba(255,167,38,0.2) 50%, rgba(255,183,77,0.3) 100%)'
+              background: 'linear-gradient(135deg, rgba(236,72,153,0.3) 0%, rgba(219,39,119,0.2) 50%, rgba(244,114,182,0.3) 100%)'
             }}
           />
 
@@ -75,13 +75,13 @@ export default function DiagnosisLoadingOverlay({
             <RobotScholarIcon />
 
             <div className="mb-6">
-              <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 mb-2 text-center">市場データ分析中</h3>
-              <p className="text-sm font-semibold text-orange-700 text-center">参考情報を生成しています...</p>
+              <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600 mb-2 text-center">市場データ分析中</h3>
+              <p className="text-sm font-semibold text-pink-700 text-center">参考情報を生成しています...</p>
             </div>
 
-            <div className="relative w-full h-4 bg-gradient-to-r from-orange-100 to-amber-100 rounded-full overflow-hidden mb-3 border-2 border-orange-300 shadow-inner">
+            <div className="relative w-full h-4 bg-gradient-to-r from-pink-100 to-rose-100 rounded-full overflow-hidden mb-3 border-2 border-pink-300 shadow-inner">
               <div
-                className="absolute top-0 left-0 h-full bg-gradient-to-r from-orange-500 via-amber-500 to-orange-400 transition-all duration-300 ease-out animate-gradient-shift shadow-lg"
+                className="absolute top-0 left-0 h-full bg-gradient-to-r from-pink-500 via-rose-500 to-pink-400 transition-all duration-300 ease-out animate-gradient-shift shadow-lg"
                 style={{
                   width: `${Math.min(progress, 100)}%`,
                   backgroundSize: '200% 100%'
@@ -93,17 +93,17 @@ export default function DiagnosisLoadingOverlay({
             </div>
 
             <div className="mb-6 text-center">
-              <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600">
+              <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600">
                 {Math.floor(Math.min(progress, 100))}%
               </span>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-50 to-amber-50 border-3 border-orange-200 rounded-xl p-6 shadow-lg">
+            <div className="bg-gradient-to-br from-pink-50 to-rose-50 border-3 border-pink-200 rounded-xl p-6 shadow-lg">
               <div className="space-y-3 text-sm">
-                <p className="text-orange-900 font-bold text-center text-base">
+                <p className="text-pink-900 font-bold text-center text-base">
                   AIによる情報分析中（参考資料作成）
                 </p>
-                <p className="text-orange-700 font-semibold text-center">
+                <p className="text-pink-700 font-semibold text-center">
                   しばらくお待ちください
                 </p>
               </div>
