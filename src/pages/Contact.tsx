@@ -174,7 +174,7 @@ export default function Contact() {
                 <strong>電話番号:</strong> 03-5211-2632
               </p>
               <p className="text-sm text-gray-700 mb-2">
-                <strong>メールアドレス:</strong> support@stockdata.jp
+                <strong>メールアドレス:</strong> support@perfectstocks.jp
               </p>
               <p className="text-sm text-gray-700">
                 <strong>受付時間:</strong> 平日 9:00-18:00

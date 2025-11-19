@@ -60,8 +60,8 @@ export default function SpecifiedCommercialTransactionAct() {
                   <h2 className="text-xl font-bold text-gray-900 mb-4">連絡先</h2>
                   <dl className="space-y-3">
                     <div className="grid sm:grid-cols-3 gap-2">
-                      <dt className="font-semibold text-gray-900">担当者</dt>
-                      <dd className="sm:col-span-2 text-gray-700">岩瀬朗（Akira Iwase）</dd>
+                      <dt className="font-semibold text-gray-900">代表者</dt>
+                      <dd className="sm:col-span-2 text-gray-700">岩瀬朗 (Akira Iwase)</dd>
                     </div>
                     <div className="grid sm:grid-cols-3 gap-2">
                       <dt className="font-semibold text-gray-900">電話番号</dt>
@@ -69,7 +69,7 @@ export default function SpecifiedCommercialTransactionAct() {
                     </div>
                     <div className="grid sm:grid-cols-3 gap-2">
                       <dt className="font-semibold text-gray-900">メールアドレス</dt>
-                      <dd className="sm:col-span-2 text-blue-600">support@stockdata.jp</dd>
+                      <dd className="sm:col-span-2 text-blue-600">support@perfectstocks.jp</dd>
                     </div>
                     <div className="grid sm:grid-cols-3 gap-2">
                       <dt className="font-semibold text-gray-900">受付時間</dt>
@@ -238,7 +238,7 @@ export default function SpecifiedCommercialTransactionAct() {
                   <Mail className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-gray-900 mb-1">メール</p>
-                    <p className="text-blue-600">support@stockdata.jp</p>
+                    <p className="text-blue-600">support@perfectstocks.jp</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 mb-4">

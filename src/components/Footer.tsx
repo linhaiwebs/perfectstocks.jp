@@ -272,7 +272,7 @@ export default function Footer() {
                   <span>03-5211-2632</span>
                 </li>
                 <li className="text-blue-300">
-                  support@stockdata.jp
+                  support@perfectstocks.jp
                 </li>
                 <li className="text-blue-300 text-xs">
                   受付時間: 平日 9:00-18:00
@@ -287,7 +287,7 @@ export default function Footer() {
                 サービス情報
               </h4>
               <ul className="space-y-2 text-xs sm:text-sm text-blue-300">
-                <li className="font-semibold">株式会社メッセ</li>
+                <li className="font-semibold">株式会社集英社インターナショナル</li>
                 <li>AI株式診断サービス</li>
                 <li>リアルタイム株価情報</li>
                 <li>テクニカル分析</li>
