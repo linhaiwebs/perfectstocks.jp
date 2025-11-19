@@ -353,15 +353,15 @@ export default function NewHome() {
 
         {stockData && diagnosisState === 'initial' && (
           <>
-            <SplitStockCard
-              info={stockData.info}
-              latestPrice={stockData.prices[0]}
-            />
-
             <PulsingButton
               onClick={runDiagnosis}
               stockName={stockData.info.name}
               disabled={!hasRealData}
+            />
+
+            <SplitStockCard
+              info={stockData.info}
+              latestPrice={stockData.prices[0]}
             />
 
             <ScrollingHistoryData

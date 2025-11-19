@@ -14,7 +14,7 @@ export default function PulsingButton({ onClick, stockName = '', disabled = fals
   };
 
   return (
-    <div className="flex justify-center px-4 my-8">
+    <div className="flex justify-center px-4 mb-8">
       <div className="max-w-lg w-full">
         <button
           onClick={handleClick}
