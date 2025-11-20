@@ -17,7 +17,7 @@ export default function PulsingButton({ onClick, stockName = '', disabled = fals
         <button
           onClick={handleClick}
           disabled={disabled}
-          className="relative group disabled:opacity-50 disabled:cursor-not-allowed w-full transform transition-all duration-300 hover:scale-105 active:scale-95"
+          className="relative group disabled:cursor-not-allowed w-full transform transition-all duration-300 hover:scale-105 active:scale-95"
         >
           <div
             className="relative w-full bg-no-repeat flex items-center justify-center"
