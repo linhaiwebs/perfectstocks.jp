@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-6 sm:gap-8 mb-6">
             {/* Legal Documents */}
             <div>
-              <h4 className="font-bold text-blue-200 mb-3 flex items-center gap-2 text-sm">
+              <h4 className="font-bold mb-3 flex items-center gap-2 text-sm" style={{ color: '#5c5c5c' }}>
                 <FileText className="w-4 h-4" />
                 法的文書
               </h4>
@@ -21,7 +21,8 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/terms"
-                    className="text-orange-300 hover:text-orange-200 hover:underline flex items-center gap-1"
+                    className="hover:underline flex items-center gap-1"
+                    style={{ color: '#5c5c5c' }}
                   >
                     利用規約 <ExternalLink className="w-3 h-3" />
                   </Link>
@@ -29,7 +30,8 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/privacy"
-                    className="text-blue-300 hover:text-blue-200 hover:underline flex items-center gap-1"
+                    className="hover:underline flex items-center gap-1"
+                    style={{ color: '#5c5c5c' }}
                   >
                     プライバシーポリシー <ExternalLink className="w-3 h-3" />
                   </Link>
@@ -37,7 +39,8 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/disclaimer"
-                    className="text-blue-300 hover:text-blue-200 hover:underline flex items-center gap-1"
+                    className="hover:underline flex items-center gap-1"
+                    style={{ color: '#5c5c5c' }}
                   >
                     免責事項 <ExternalLink className="w-3 h-3" />
                   </Link>
@@ -45,7 +48,8 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/specified-commercial-transaction-act"
-                    className="text-blue-300 hover:text-blue-200 hover:underline flex items-center gap-1"
+                    className="hover:underline flex items-center gap-1"
+                    style={{ color: '#5c5c5c' }}
                   >
                     特定商取引法表記 <ExternalLink className="w-3 h-3" />
                   </Link>
@@ -55,7 +59,7 @@ export default function Footer() {
 
             {/* Contact */}
             <div>
-              <h4 className="font-bold text-blue-200 mb-3 flex items-center gap-2 text-sm">
+              <h4 className="font-bold mb-3 flex items-center gap-2 text-sm" style={{ color: '#5c5c5c' }}>
                 <Mail className="w-4 h-4" />
                 お問い合わせ
               </h4>
@@ -63,7 +67,8 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/contact"
-                    className="text-blue-300 hover:text-blue-200 hover:underline flex items-center gap-1"
+                    className="hover:underline flex items-center gap-1"
+                    style={{ color: '#5c5c5c' }}
                   >
                     お問い合わせフォーム <ExternalLink className="w-3 h-3" />
                   </Link>
@@ -71,19 +76,20 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/faq"
-                    className="text-blue-300 hover:text-blue-200 hover:underline flex items-center gap-1"
+                    className="hover:underline flex items-center gap-1"
+                    style={{ color: '#5c5c5c' }}
                   >
                     よくある質問 <ExternalLink className="w-3 h-3" />
                   </Link>
                 </li>
-                <li className="flex items-center gap-1 text-blue-200 mt-3">
+                <li className="flex items-center gap-1 mt-3" style={{ color: '#5c5c5c' }}>
                   <Phone className="w-3 h-3" />
                   <span>03-5211-2632</span>
                 </li>
-                <li className="text-blue-300">
+                <li style={{ color: '#5c5c5c' }}>
                   support@perfectstocks.jp
                 </li>
-                <li className="text-blue-300 text-xs">
+                <li className="text-xs" style={{ color: '#5c5c5c' }}>
                   受付時間: 平日 9:00-18:00
                 </li>
               </ul>
@@ -93,10 +99,10 @@ export default function Footer() {
 
           {/* Copyright Section */}
           <div className="border-t border-blue-500/20 pt-4 text-center">
-            <p className="text-xs sm:text-sm text-blue-300 mb-2 font-medium">
+            <p className="text-xs sm:text-sm mb-2 font-medium" style={{ color: '#5c5c5c' }}>
               &copy; {currentYear} 株式会社集英社インターナショナル. All rights reserved.
             </p>
-            <p className="text-[10px] sm:text-xs text-blue-400 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-[10px] sm:text-xs leading-relaxed max-w-3xl mx-auto" style={{ color: '#5c5c5c' }}>
               当サイトで提供される情報は投資勧誘を目的としたものではありません。
               投資に関する最終決定は、利用者ご自身の判断でなさるようお願いいたします。
               掲載されている情報の正確性については万全を期しておりますが、その内容の正確性、安全性、有用性を保証するものではありません。
