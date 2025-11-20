@@ -12,14 +12,6 @@ export default function HeroSection({ stockCode = '----', stockName = '', onDiag
     <div className="relative w-full">
       <div className="w-full px-4 py-6 flex flex-col items-center">
         <div className="w-full max-w-4xl mx-auto mb-8">
-          <div className="flex justify-end mb-12">
-            <img
-              src="/logo.png"
-              alt="Logo"
-              className="h-20 w-auto object-contain"
-            />
-          </div>
-
           <div className="text-center mb-4" style={{ marginTop: '6rem' }}>
             <h1 className="inline-block">
               <span
