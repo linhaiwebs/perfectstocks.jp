@@ -37,36 +37,36 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
                   <span className={`text-lg font-bold ${changeColor}`}>{info.changePercent}</span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
-                  <div className="flex justify-between">
+                <div className="grid grid-cols-2 gap-x-8 gap-y-1.5 text-sm">
+                  <div className="flex gap-2">
                     <span style={{ color: '#384860' }}>前日比較</span>
                     <span className="text-red-600">{info.change}</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex gap-2">
                     <span style={{ color: '#384860' }}>高値</span>
                     <span className="text-red-600">{latestPrice?.high || info.price}</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex gap-2">
                     <span style={{ color: '#384860' }}>始値</span>
                     <span className="text-red-600">{latestPrice?.open || info.price}</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex gap-2">
                     <span style={{ color: '#384860' }}>安値</span>
                     <span className="text-red-600">{latestPrice?.low || info.price}</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex gap-2">
                     <span style={{ color: '#384860' }}>終値</span>
                     <span className="text-red-600">{latestPrice?.close || info.price}</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex gap-2">
                     <span style={{ color: '#384860' }}>PER</span>
                     <span className="text-red-600">{info.per}</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex gap-2">
                     <span style={{ color: '#384860' }}>前日取引</span>
                     <span className="text-red-600">{latestPrice?.volume || 'N/A'}</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex gap-2">
                     <span style={{ color: '#384860' }}>配当利回り</span>
                     <span className="text-red-600">{info.dividend}</span>
                   </div>
