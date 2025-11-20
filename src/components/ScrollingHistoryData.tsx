@@ -7,15 +7,15 @@ interface ScrollingHistoryDataProps {
 }
 
 export default function ScrollingHistoryData({ prices, stockName }: ScrollingHistoryDataProps) {
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [startIndex, setStartIndex] = useState(0);
 
   useEffect(() => {
-    if (prices.length <= 1) return;
+    if (prices.length <= 3) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => {
+      setStartIndex((prev) => {
         const next = prev + 1;
-        return next >= prices.length ? 1 : next;
+        return next >= prices.length - 2 ? 0 : next;
       });
     }, 3000);
 
@@ -26,8 +26,9 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
     return null;
   }
 
-  const latestPrice = prices[0];
-  const currentPrice = prices.length > 1 ? prices[currentIndex] : latestPrice;
+  const displayPrices = prices.length <= 3
+    ? prices
+    : [prices[startIndex], prices[startIndex + 1], prices[startIndex + 2]];
 
   const formatChange = (change: string, changePercent: string) => {
     const changeNum = parseFloat(change);
@@ -54,7 +55,7 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
 
         <div className="text-center mb-3">
           <div className="text-base font-medium text-gray-700 mb-1">
-            銘柄：{price.close} {stockName}
+            銘柄：{price.close}
           </div>
         </div>
 
@@ -70,9 +71,12 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
   return (
     <div className="px-4 py-2">
       <div className="max-w-lg mx-auto">
-        <div className="grid grid-cols-2 gap-3">
-          {renderCard(latestPrice)}
-          {renderCard(currentPrice)}
+        <div className="space-y-3">
+          {displayPrices.map((price, index) => (
+            <div key={`${price.date}-${index}`}>
+              {renderCard(price)}
+            </div>
+          ))}
         </div>
 
         <div className="mt-3 text-center">
