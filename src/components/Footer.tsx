@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FileText, Mail, ExternalLink, Info, Phone, Building } from 'lucide-react';
+import { FileText, Mail, ExternalLink, Info, Phone } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 py-6">
         {/* Footer Links Section */}
         <div className="border-t-2 border-blue-500/20 pt-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-6">
             {/* Legal Documents */}
             <div>
               <h4 className="font-bold text-blue-200 mb-3 flex items-center gap-2 text-sm">
@@ -39,14 +39,6 @@ export default function Footer() {
                     className="text-blue-300 hover:text-blue-200 hover:underline flex items-center gap-1"
                   >
                     免責事項 <ExternalLink className="w-3 h-3" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/risk-disclosure"
-                    className="text-blue-300 hover:text-blue-200 hover:underline flex items-center gap-1"
-                  >
-                    リスク開示書面 <ExternalLink className="w-3 h-3" />
                   </Link>
                 </li>
                 <li>
@@ -83,15 +75,7 @@ export default function Footer() {
                     よくある質問 <ExternalLink className="w-3 h-3" />
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    to="/support"
-                    className="text-blue-300 hover:text-blue-200 hover:underline flex items-center gap-1"
-                  >
-                    サポート <ExternalLink className="w-3 h-3" />
-                  </Link>
-                </li>
-                <li className="flex items-center gap-1 text-blue-200">
+                <li className="flex items-center gap-1 text-blue-200 mt-3">
                   <Phone className="w-3 h-3" />
                   <span>03-5211-2632</span>
                 </li>
@@ -117,48 +101,6 @@ export default function Footer() {
                 <li>テクニカル分析</li>
                 <li>銘柄スクリーニング</li>
                 <li className="text-[11px] mt-2">データ提供: 公開市場情報</li>
-              </ul>
-            </div>
-
-            {/* Company Information */}
-            <div>
-              <h4 className="font-bold text-blue-200 mb-3 flex items-center gap-2 text-sm">
-                <Building className="w-4 h-4" />
-                運営会社
-              </h4>
-              <ul className="space-y-2 text-xs sm:text-sm">
-                <li>
-                  <Link
-                    to="/about"
-                    className="text-blue-300 hover:text-blue-200 hover:underline flex items-center gap-1"
-                  >
-                    会社概要 <ExternalLink className="w-3 h-3" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/team"
-                    className="text-blue-300 hover:text-blue-200 hover:underline flex items-center gap-1"
-                  >
-                    チーム紹介 <ExternalLink className="w-3 h-3" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/careers"
-                    className="text-blue-300 hover:text-blue-200 hover:underline flex items-center gap-1"
-                  >
-                    採用情報 <ExternalLink className="w-3 h-3" />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/press"
-                    className="text-blue-300 hover:text-blue-200 hover:underline flex items-center gap-1"
-                  >
-                    プレスリリース <ExternalLink className="w-3 h-3" />
-                  </Link>
-                </li>
               </ul>
             </div>
           </div>
