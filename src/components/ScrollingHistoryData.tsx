@@ -67,7 +67,7 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
 
   return (
     <div className="px-4 py-2">
-      <div className="max-w-md mx-auto">
+      <div className="w-[80%] mx-auto">
         <div className="divide-y divide-gray-200">
           {displayPrices.map((price, index) => (
             <div key={`${price.date}-${index}`}>
