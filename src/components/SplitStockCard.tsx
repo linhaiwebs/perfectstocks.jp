@@ -24,8 +24,7 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
   return (
     <div className="px-4 py-2">
       <div className="max-w-lg mx-auto">
-        <div className="relative">
-          <div className="px-6 py-8">
+        <div className="px-6 py-8">
             <div className="flex gap-3">
               <div className="flex-1" style={{ width: '50%' }}>
                 <div className="text-sm text-blue-300 font-bold mb-1 whitespace-nowrap">
@@ -129,7 +128,6 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
                 </svg>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
