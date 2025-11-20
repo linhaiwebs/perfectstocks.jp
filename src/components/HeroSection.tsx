@@ -81,6 +81,13 @@ export default function HeroSection({ stockCode = '----', stockName = '', onDiag
                     backgroundSize: '200% 100%'
                   }}
                 />
+
+                <div className="relative flex flex-col items-center gap-1 py-5 px-6">
+                  <span className="text-white font-bold text-xl drop-shadow-lg">
+                    {hasStockData ? `【${stockName}】` : '銘柄'}の情報を見る
+                  </span>
+                  <span className="text-xs text-orange-50 font-semibold">※教育・学習用の情報表示ツール</span>
+                </div>
               </div>
             </button>
           </div>

@@ -159,7 +159,7 @@ export default function About() {
               <div className="bg-slate-50 rounded-lg p-6">
                 <dl className="space-y-3">
                   <div className="flex flex-col sm:flex-row sm:items-start">
-                    <dt className="font-semibold text-gray-900 w-32 flex-shrink-0">代表者</dt>
+                    <dt className="font-semibold text-gray-900 w-32 flex-shrink-0">負責者</dt>
                     <dd className="text-gray-700">岩瀬朗<br />Akira Iwase</dd>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-start">
@@ -176,7 +176,7 @@ export default function About() {
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-start">
                     <dt className="font-semibold text-gray-900 w-32 flex-shrink-0">メールアドレス</dt>
-                    <dd className="text-gray-700">support@perfectstocks.jp</dd>
+                    <dd className="text-gray-700">support@stockdata.jp</dd>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-start">
                     <dt className="font-semibold text-gray-900 w-32 flex-shrink-0">事業内容</dt>

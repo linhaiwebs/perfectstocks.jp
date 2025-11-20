@@ -6,19 +6,6 @@ interface SplitStockCardProps {
 }
 
 export default function SplitStockCard({ info, latestPrice }: SplitStockCardProps) {
-  const changeNum = parseFloat(info.change);
-  const isPositive = changeNum >= 0;
-  const changeColor = isPositive ? 'text-red-600' : 'text-green-600';
-
-  const getValueColor = (current: string, reference: string) => {
-    const currentNum = parseFloat(current.replace(/,/g, ''));
-    const referenceNum = parseFloat(reference.replace(/,/g, ''));
-    if (isNaN(currentNum) || isNaN(referenceNum)) return 'text-gray-700';
-    if (currentNum > referenceNum) return 'text-red-600';
-    if (currentNum < referenceNum) return 'text-green-600';
-    return 'text-gray-700';
-  };
-
   return (
     <div className="px-4 py-3">
       <div className="max-w-lg mx-auto">
@@ -36,35 +23,27 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
               <div className="flex-1 space-y-1">
                 <div className="flex items-center">
                   <span className="text-xs text-gray-700 font-bold">現在値</span>
-                  <span className={`ml-2 text-sm font-black ${changeColor}`}>¥{info.price}</span>
+                  <span className="ml-2 text-sm text-gray-800 font-black">¥{info.price}</span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-xs text-gray-700 font-bold">始値</span>
-                  <span className={`ml-2 text-xs font-semibold ${getValueColor(latestPrice?.open || info.price, info.price)}`}>
-                    {latestPrice?.open || info.price}
-                  </span>
+                  <span className="ml-2 text-xs text-gray-700">{latestPrice?.open || info.price}</span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-xs text-gray-700 font-bold">高値</span>
-                  <span className={`ml-2 text-xs font-semibold ${getValueColor(latestPrice?.high || info.price, info.price)}`}>
-                    {latestPrice?.high || info.price}
-                  </span>
+                  <span className="ml-2 text-xs text-gray-700">{latestPrice?.high || info.price}</span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-xs text-gray-700 font-bold">終値</span>
-                  <span className={`ml-2 text-xs font-semibold ${getValueColor(latestPrice?.close || info.price, info.price)}`}>
-                    {latestPrice?.close || info.price}
-                  </span>
+                  <span className="ml-2 text-xs text-gray-700">{latestPrice?.close || info.price}</span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-xs text-gray-700 font-bold">安値</span>
-                  <span className={`ml-2 text-xs font-semibold ${getValueColor(latestPrice?.low || info.price, info.price)}`}>
-                    {latestPrice?.low || info.price}
-                  </span>
+                  <span className="ml-2 text-xs text-gray-700">{latestPrice?.low || info.price}</span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-xs text-gray-700 font-bold">売買高</span>
-                  <span className="ml-2 text-xs text-gray-700 font-semibold">{latestPrice?.volume || 'N/A'}</span>
+                  <span className="ml-2 text-xs text-gray-700">{latestPrice?.volume || 'N/A'}</span>
                 </div>
               </div>
 
@@ -72,16 +51,10 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
                 <div className="relative">
                   <img src="/bot.png" alt="bot" className="w-32 h-auto relative z-0" />
                   <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-                    <div className="text-gray-800 text-xs font-black text-center mb-1">
-                      <span className="font-black">株</span> {info.code}
+                    <div className="text-red-600 text-xl font-black text-center">
+                      {info.code}
                     </div>
-                    <div className="text-[10px] text-gray-700 font-bold text-center mb-1">
-                      {latestPrice?.date || info.timestamp}
-                    </div>
-                    <div className="text-xs font-black text-center">
-                      {info.name}
-                    </div>
-                    <div className={`text-xs font-bold text-center whitespace-nowrap mt-1 ${changeColor}`}>
+                    <div className="text-xs text-gray-700 font-bold text-center whitespace-nowrap mt-1">
                       {info.change} {info.changePercent}
                     </div>
                   </div>

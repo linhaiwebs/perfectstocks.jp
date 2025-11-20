@@ -151,7 +151,7 @@ export default function Privacy() {
                 101-0064<br />東京都千代田区神田猿楽町1-5-18 千代田ビル3F
               </p>
               <p className="text-sm text-gray-700 mb-2">
-                メール: support@perfectstocks.jp
+                メール: support@stockdata.jp
               </p>
               <p className="text-sm text-gray-700 mb-2">
                 電話: 03-5211-2632

@@ -49,7 +49,7 @@ export default function Press() {
 
   const mediaContact = {
     department: '広報担当',
-    email: 'support@perfectstocks.jp',
+    email: 'support@stockdata.jp',
     phone: '03-5211-2632',
     hours: '平日 9:00 - 18:00'
   };
