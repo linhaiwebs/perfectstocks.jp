@@ -9,14 +9,16 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
   const changeNum = parseFloat(info.change);
   const isPositive = changeNum >= 0;
   const changeColor = isPositive ? 'text-red-600' : 'text-green-600';
+  const arrowColor = isPositive ? '#ef4444' : '#22c55e';
+  const chartColor = isPositive ? '#ef4444' : '#22c55e';
 
   const getValueColor = (current: string, reference: string) => {
     const currentNum = parseFloat(current.replace(/,/g, ''));
     const referenceNum = parseFloat(reference.replace(/,/g, ''));
-    if (isNaN(currentNum) || isNaN(referenceNum)) return 'text-gray-700';
+    if (isNaN(currentNum) || isNaN(referenceNum)) return 'text-gray-400';
     if (currentNum > referenceNum) return 'text-red-600';
     if (currentNum < referenceNum) return 'text-green-600';
-    return 'text-gray-700';
+    return 'text-gray-400';
   };
 
   return (
@@ -25,56 +27,106 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
         <div className="relative">
           <div className="px-6 py-8">
             <div className="flex gap-6">
-              <div className="flex-1 space-y-1">
-                <div className="flex items-center">
-                  <span className="text-xs text-white font-bold">現在値</span>
-                  <span className={`ml-2 text-sm font-black ${changeColor}`}>¥{info.price}</span>
+              <div className="flex-1">
+                <div className="text-xs text-blue-300 font-bold mb-1">
+                  {info.name}
                 </div>
-                <div className="flex items-center">
-                  <span className="text-xs text-white font-bold">始値</span>
-                  <span className={`ml-2 text-xs font-semibold ${getValueColor(latestPrice?.open || info.price, info.price)}`}>
-                    {latestPrice?.open || info.price}
-                  </span>
+                <div className="flex items-baseline gap-2 mb-3">
+                  <span className={`text-3xl font-black ${changeColor}`}>{info.price}</span>
+                  <span className={`text-sm font-bold ${changeColor}`}>{info.change}</span>
+                  <span className={`text-sm font-bold ${changeColor}`}>{info.changePercent}</span>
                 </div>
-                <div className="flex items-center">
-                  <span className="text-xs text-white font-bold">高値</span>
-                  <span className={`ml-2 text-xs font-semibold ${getValueColor(latestPrice?.high || info.price, info.price)}`}>
-                    {latestPrice?.high || info.price}
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-xs text-white font-bold">終値</span>
-                  <span className={`ml-2 text-xs font-semibold ${getValueColor(latestPrice?.close || info.price, info.price)}`}>
-                    {latestPrice?.close || info.price}
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-xs text-white font-bold">安値</span>
-                  <span className={`ml-2 text-xs font-semibold ${getValueColor(latestPrice?.low || info.price, info.price)}`}>
-                    {latestPrice?.low || info.price}
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-xs text-white font-bold">売買高</span>
-                  <span className="ml-2 text-xs text-white font-semibold">{latestPrice?.volume || 'N/A'}</span>
+
+                <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+                  <div className="flex justify-between">
+                    <span className="text-blue-300">前日比較</span>
+                    <span className={changeColor}>{info.change}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-blue-300">高値</span>
+                    <span className={getValueColor(latestPrice?.high || info.price, info.price)}>{latestPrice?.high || info.price}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-blue-300">始値</span>
+                    <span className={getValueColor(latestPrice?.open || info.price, info.price)}>{latestPrice?.open || info.price}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-blue-300">安値</span>
+                    <span className={getValueColor(latestPrice?.low || info.price, info.price)}>{latestPrice?.low || info.price}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-blue-300">終値</span>
+                    <span className={getValueColor(latestPrice?.close || info.price, info.price)}>{latestPrice?.close || info.price}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-blue-300">PER</span>
+                    <span className="text-gray-400">{info.per}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-blue-300">前日取引</span>
+                    <span className="text-gray-400">{latestPrice?.volume || 'N/A'}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-blue-300">配当利回り</span>
+                    <span className="text-gray-400">{info.dividend}</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex flex-col items-center justify-start">
-                <div className="flex flex-col items-center justify-center">
-                  <div className="text-white text-xs font-black text-center mb-1">
-                    <span className="font-black">株</span> {info.code}
-                  </div>
-                  <div className="text-[10px] text-blue-300 font-bold text-center mb-1">
-                    {latestPrice?.date || info.timestamp}
-                  </div>
-                  <div className="text-xs font-black text-center text-white">
-                    {info.name}
-                  </div>
-                  <div className={`text-xs font-bold text-center whitespace-nowrap mt-1 ${changeColor}`}>
-                    {info.change} {info.changePercent}
-                  </div>
-                </div>
+              <div className="flex flex-col items-center justify-center w-32">
+                <svg width="120" height="80" viewBox="0 0 120 80" className="mb-2">
+                  <defs>
+                    <linearGradient id={`gradient-${isPositive ? 'up' : 'down'}`} x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" style={{ stopColor: chartColor, stopOpacity: 0.3 }} />
+                      <stop offset="100%" style={{ stopColor: chartColor, stopOpacity: 0 }} />
+                    </linearGradient>
+                  </defs>
+
+                  {isPositive ? (
+                    <>
+                      <polyline
+                        points="10,60 30,50 45,55 60,45 75,40 90,35 105,25"
+                        fill="none"
+                        stroke={chartColor}
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <polygon
+                        points="10,60 30,50 45,55 60,45 75,40 90,35 105,25 105,70 10,70"
+                        fill={`url(#gradient-up)`}
+                      />
+                      <polygon
+                        points="105,15 115,25 105,25"
+                        fill={chartColor}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <polyline
+                        points="10,20 30,30 45,25 60,35 75,40 90,45 105,55"
+                        fill="none"
+                        stroke={chartColor}
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <polygon
+                        points="10,20 30,30 45,25 60,35 75,40 90,45 105,55 105,10 10,10"
+                        fill={`url(#gradient-down)`}
+                      />
+                      <polygon
+                        points="105,65 115,55 105,55"
+                        fill={chartColor}
+                      />
+                    </>
+                  )}
+
+                  <rect x="10" y="73" width="8" height="5" fill="#fbbf24" />
+                  <rect x="25" y="70" width="8" height="8" fill="#fbbf24" />
+                  <rect x="40" y="68" width="8" height="10" fill="#fb923c" />
+                  <rect x="55" y="65" width="8" height="13" fill="#f97316" />
+                </svg>
               </div>
             </div>
           </div>
