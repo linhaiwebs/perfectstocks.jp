@@ -375,6 +375,46 @@ export default function NewHome() {
               disabled={!hasRealData}
             />
 
+            <div className="px-4 py-6">
+              <div className="max-w-lg mx-auto">
+                <img
+                  src="/foot.png"
+                  alt="Services"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+
+            <div className="px-4 py-4">
+              <div className="max-w-lg mx-auto relative">
+                <img
+                  src="/footer.png"
+                  alt="Footer"
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="grid grid-cols-4 gap-2 sm:gap-4 text-center w-full px-4">
+                    <div className="text-white text-xs sm:text-sm font-bold">
+                      <div>AI株式診断</div>
+                      <div>サービス</div>
+                    </div>
+                    <div className="text-white text-xs sm:text-sm font-bold">
+                      <div>リアルタイム</div>
+                      <div>株価情報</div>
+                    </div>
+                    <div className="text-white text-xs sm:text-sm font-bold">
+                      <div>銘柄</div>
+                      <div>スクリーニング</div>
+                    </div>
+                    <div className="text-white text-xs sm:text-sm font-bold">
+                      <div>データ提供:</div>
+                      <div>公開市場情報</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <CircularAnalysisNav />
           </>
         )}
