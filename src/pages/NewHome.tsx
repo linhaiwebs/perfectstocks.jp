@@ -339,8 +339,7 @@ export default function NewHome() {
       backgroundImage: 'url(/back.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundAttachment: 'fixed'
+      backgroundRepeat: 'no-repeat'
     }}>
       <HeroSection
         stockCode={stockCode}
