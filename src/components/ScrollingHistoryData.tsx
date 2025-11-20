@@ -35,43 +35,44 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
     return `${sign}${change} (${sign}${changePercent}%)`;
   };
 
+  const renderCard = (price: StockPrice) => {
+    const changeNum = parseFloat(price.change);
+    const isPositive = changeNum >= 0;
+    const changeColor = isPositive ? 'text-red-600' : 'text-green-600';
+    const borderColor = isPositive ? 'border-red-200' : 'border-green-200';
+
+    return (
+      <div
+        className={`rounded-2xl border-2 ${borderColor} p-4 shadow-sm`}
+        style={{ backgroundColor: '#fef9f5' }}
+      >
+        <div className="flex justify-center mb-3">
+          <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-6 py-1.5 rounded-full text-sm font-bold shadow-md">
+            株-{price.code || stockName} {price.date}
+          </div>
+        </div>
+
+        <div className="text-center mb-3">
+          <div className="text-base font-medium text-gray-700 mb-1">
+            銘柄：{price.close} {stockName}
+          </div>
+        </div>
+
+        <div className={`rounded-xl border-2 ${borderColor} p-3 text-center`}>
+          <div className="text-sm text-gray-600">
+            前日比：<span className={`font-bold ${changeColor}`}>{formatChange(price.change, price.changePercent)}</span>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="px-4 py-2">
       <div className="max-w-lg mx-auto">
         <div className="grid grid-cols-2 gap-3">
-          <div className="bg-white rounded-lg p-4 border-2 border-pink-400">
-            <div className="space-y-2">
-              <div className="text-sm text-gray-700">
-                <span className="font-semibold">株</span> {latestPrice.code || stockName}
-              </div>
-              <div className="text-xs text-gray-600">{latestPrice.date}</div>
-              <div className="text-sm">
-                <span className="text-gray-700">終値: </span>
-                <span className="text-green-600 font-bold">{latestPrice.close}</span>
-              </div>
-              <div className="text-xs text-gray-700 font-medium">{stockName}</div>
-              <div className="text-xs text-gray-600">
-                前日比: {formatChange(latestPrice.change, latestPrice.changePercent)}
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg p-4 border-2 border-pink-400">
-            <div className="space-y-2">
-              <div className="text-sm text-gray-700">
-                <span className="font-semibold">株</span> {currentPrice.code || stockName}
-              </div>
-              <div className="text-xs text-gray-600">{currentPrice.date}</div>
-              <div className="text-sm">
-                <span className="text-gray-700">終値: </span>
-                <span className="text-green-600 font-bold">{currentPrice.close}</span>
-              </div>
-              <div className="text-xs text-gray-700 font-medium">{stockName}</div>
-              <div className="text-xs text-gray-600">
-                前日比: {formatChange(currentPrice.change, currentPrice.changePercent)}
-              </div>
-            </div>
-          </div>
+          {renderCard(latestPrice)}
+          {renderCard(currentPrice)}
         </div>
 
         <div className="mt-3 text-center">
