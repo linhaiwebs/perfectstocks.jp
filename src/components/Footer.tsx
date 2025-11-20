@@ -44,11 +44,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative z-20 border-t-2 border-blue-500/30 mt-12">
-      <div className="w-full mb-8">
-        <img src="/footer.png" alt="" className="w-full h-auto object-cover" />
-      </div>
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 py-8">
+    <footer className="relative z-20 border-t-2 border-blue-500/30 mt-8">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 py-6">
           {/* Legal Disclosure Section - Desktop */}
           <div className="hidden md:block bg-blue-950/40 backdrop-blur-md border-2 border-blue-500/30 rounded-lg p-6 mb-8">
           <div className="flex items-start gap-4">
@@ -272,7 +269,7 @@ export default function Footer() {
                   <span>03-5211-2632</span>
                 </li>
                 <li className="text-blue-300">
-                  support@stockdata.jp
+                  support@perfectstocks.jp
                 </li>
                 <li className="text-blue-300 text-xs">
                   受付時間: 平日 9:00-18:00
@@ -287,7 +284,7 @@ export default function Footer() {
                 サービス情報
               </h4>
               <ul className="space-y-2 text-xs sm:text-sm text-blue-300">
-                <li className="font-semibold">株式会社メッセ</li>
+                <li className="font-semibold">株式会社集英社インターナショナル</li>
                 <li>AI株式診断サービス</li>
                 <li>リアルタイム株価情報</li>
                 <li>テクニカル分析</li>
