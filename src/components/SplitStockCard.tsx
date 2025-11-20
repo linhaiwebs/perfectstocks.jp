@@ -26,8 +26,8 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
       <div className="max-w-lg mx-auto">
         <div className="relative">
           <div className="px-6 py-8">
-            <div className="flex gap-6">
-              <div className="flex-1">
+            <div className="flex gap-3">
+              <div className="flex-1" style={{ width: '50%' }}>
                 <div className="text-sm text-blue-300 font-bold mb-1 whitespace-nowrap">
                   {info.name} ({info.code}) {latestPrice?.date || info.timestamp}
                 </div>
@@ -37,7 +37,7 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
                   <span className={`text-lg font-bold ${changeColor}`}>{info.changePercent}</span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                <div className="grid grid-cols-2 gap-x-2 gap-y-2 text-sm">
                   <div className="flex flex-col">
                     <span className="text-red-600 font-semibold">{info.change}</span>
                     <span style={{ color: '#384860' }} className="text-xs">前日比較</span>
@@ -73,7 +73,7 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
                 </div>
               </div>
 
-              <div className="flex flex-col items-center justify-center w-32">
+              <div className="flex flex-col items-center justify-center" style={{ width: '50%' }}>
                 <svg width="120" height="80" viewBox="0 0 120 80" className="mb-2">
                   <defs>
                     <linearGradient id={`gradient-${isPositive ? 'up' : 'down'}`} x1="0%" y1="0%" x2="0%" y2="100%">
