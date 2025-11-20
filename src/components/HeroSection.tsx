@@ -11,7 +11,7 @@ export default function HeroSection({ stockCode = '----', stockName = '', onDiag
 
   return (
     <div className="relative w-full">
-      <div className="w-full py-4" style={{ backgroundColor: '#808080' }}>
+      <div className="w-full py-4" style={{ backgroundColor: 'rgba(128, 128, 128, 0.5)' }}>
         <div className="text-center">
           <h1 className="inline-block">
             <span
