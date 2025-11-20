@@ -28,10 +28,8 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
     { date: '----/--/--', code: '----', close: '---', change: '0', changePercent: '0' },
   ];
 
-  const displayPrices = prices.length === 0
-    ? placeholderPrices
-    : prices.length <= 3
-    ? prices
+  const displayPrices = prices.length < 3
+    ? [...prices, ...placeholderPrices].slice(0, 3)
     : [prices[startIndex], prices[startIndex + 1], prices[startIndex + 2]];
 
   const formatChange = (change: string, changePercent: string) => {
