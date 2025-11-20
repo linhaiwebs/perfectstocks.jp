@@ -28,16 +28,16 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
           <div className="px-6 py-8">
             <div className="flex gap-6">
               <div className="flex-1">
-                <div className="text-xs text-blue-300 font-bold mb-1">
-                  {info.name}
+                <div className="text-sm text-blue-300 font-bold mb-1">
+                  {info.name} ({info.code}) {latestPrice?.date || info.timestamp}
                 </div>
                 <div className="flex items-baseline gap-2 mb-3">
-                  <span className={`text-3xl font-black ${changeColor}`}>{info.price}</span>
-                  <span className={`text-sm font-bold ${changeColor}`}>{info.change}</span>
-                  <span className={`text-sm font-bold ${changeColor}`}>{info.changePercent}</span>
+                  <span className={`text-4xl font-black ${changeColor}`}>{info.price}</span>
+                  <span className={`text-lg font-bold ${changeColor}`}>{info.change}</span>
+                  <span className={`text-lg font-bold ${changeColor}`}>{info.changePercent}</span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+                <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
                   <div className="flex justify-between">
                     <span style={{ color: '#384860' }}>前日比較</span>
                     <span className="text-red-600">{info.change}</span>
