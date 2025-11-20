@@ -37,11 +37,13 @@ export default function HeroSection({ stockCode = '----', stockName = '', onDiag
             </h1>
           </div>
 
-          <div className="text-center">
+          <div className="text-center" style={{ marginTop: '100px' }}>
             <h2
-              className="text-2xl font-bold text-black"
+              className="text-2xl font-bold"
               style={{
-                fontFamily: "'Kozuka Gothic Pr6N', 'Noto Sans JP', sans-serif"
+                fontFamily: "'HYYaKuHeiW', 'Kozuka Gothic Pr6N', 'Noto Sans JP', sans-serif",
+                color: '#ef4444',
+                textShadow: '2px 2px 0 #ffffff, -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff'
               }}
             >
               銘柄無料診断
