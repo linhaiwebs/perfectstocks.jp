@@ -376,7 +376,7 @@ export default function NewHome() {
             />
 
             <div className="px-4 py-6">
-              <div className="max-w-lg mx-auto px-2">
+              <div className="max-w-lg mx-auto px-4 sm:px-6">
                 <img
                   src="/foot.png"
                   alt="Services"
@@ -386,14 +386,14 @@ export default function NewHome() {
             </div>
 
             <div className="px-4 py-4">
-              <div className="max-w-lg mx-auto relative px-2">
+              <div className="max-w-lg mx-auto relative px-4 sm:px-6">
                 <img
                   src="/footer.png"
                   alt="Footer"
                   className="w-full h-auto rounded-lg"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="grid grid-cols-4 gap-2 sm:gap-4 text-center w-full px-4">
+                <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
+                  <div className="grid grid-cols-4 gap-2 sm:gap-4 text-center w-full">
                     <div className="text-white text-xs sm:text-sm font-bold">
                       <div>AI株式診断</div>
                       <div>サービス</div>
