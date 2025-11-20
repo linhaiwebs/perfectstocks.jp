@@ -363,6 +363,12 @@ export default function NewHome() {
               latestPrice={stockData.prices[0]}
             />
 
+            <PulsingButton
+              onClick={runDiagnosis}
+              stockName={stockData.info.name}
+              disabled={!hasRealData}
+            />
+
             <ScrollingHistoryData
               prices={stockData.prices}
               stockName={stockData.info.name}
