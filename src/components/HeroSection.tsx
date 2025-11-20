@@ -37,7 +37,7 @@ export default function HeroSection({ stockCode = '----', stockName = '', onDiag
             </h1>
           </div>
 
-          <div className="text-center" style={{ marginTop: '100px' }}>
+          <div className="text-center" style={{ marginTop: '130px' }}>
             <h2
               className="font-bold whitespace-nowrap"
               style={{
