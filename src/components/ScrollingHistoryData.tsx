@@ -22,11 +22,15 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
     return () => clearInterval(interval);
   }, [prices.length]);
 
-  if (prices.length === 0) {
-    return null;
-  }
+  const placeholderPrices: StockPrice[] = [
+    { date: '----/--/--', code: '----', close: '---', change: '0', changePercent: '0' },
+    { date: '----/--/--', code: '----', close: '---', change: '0', changePercent: '0' },
+    { date: '----/--/--', code: '----', close: '---', change: '0', changePercent: '0' },
+  ];
 
-  const displayPrices = prices.length <= 3
+  const displayPrices = prices.length === 0
+    ? placeholderPrices
+    : prices.length <= 3
     ? prices
     : [prices[startIndex], prices[startIndex + 1], prices[startIndex + 2]];
 
