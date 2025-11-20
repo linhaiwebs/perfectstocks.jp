@@ -73,8 +73,8 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
                 </div>
               </div>
 
-              <div className="flex flex-col items-center justify-center" style={{ width: '50%' }}>
-                <svg width="100%" height="120" viewBox="0 0 120 80" className="mb-2" preserveAspectRatio="xMidYMid meet">
+              <div className="flex flex-col justify-center" style={{ width: '50%' }}>
+                <svg width="100%" height="100%" viewBox="0 0 120 80" preserveAspectRatio="none">
                   <defs>
                     <linearGradient id={`gradient-${isPositive ? 'up' : 'down'}`} x1="0%" y1="0%" x2="0%" y2="100%">
                       <stop offset="0%" style={{ stopColor: chartColor, stopOpacity: 0.3 }} />
