@@ -36,7 +36,7 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
   };
 
   return (
-    <div className="px-4 py-3">
+    <div className="px-4 py-2">
       <div className="max-w-lg mx-auto">
         <div className="grid grid-cols-2 gap-3">
           <div className="bg-white rounded-lg p-4 border-2 border-pink-400">

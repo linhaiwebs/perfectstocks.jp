@@ -44,11 +44,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative z-20 border-t-2 border-blue-500/30 mt-12">
-      <div className="w-full mb-8">
-        <img src="/footer.png" alt="" className="w-full h-auto object-cover" />
-      </div>
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 py-8">
+    <footer className="relative z-20 border-t-2 border-blue-500/30 mt-8">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 py-6">
           {/* Legal Disclosure Section - Desktop */}
           <div className="hidden md:block bg-blue-950/40 backdrop-blur-md border-2 border-blue-500/30 rounded-lg p-6 mb-8">
           <div className="flex items-start gap-4">
