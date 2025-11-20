@@ -132,13 +132,8 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
           </div>
         </div>
 
-        <div className="mt-2 text-center">
-          <p className="text-xs text-blue-300">
-            データ出典: 公開市場情報（準リアルタイム）
-          </p>
-          <p className="text-xs text-blue-400 mt-1">
-            ※本情報は参考資料であり、投資助言ではありません
-          </p>
+        <div className="mt-2 flex justify-center">
+          <img src="/header.png" alt="銘柄基本情報" className="h-12" />
         </div>
       </div>
     </div>
