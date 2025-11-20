@@ -37,38 +37,38 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
                   <span className={`text-lg font-bold ${changeColor}`}>{info.changePercent}</span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
-                  <div className="flex gap-2">
-                    <span style={{ color: '#384860' }}>前日比較</span>
-                    <span className="text-red-600">{info.change}</span>
+                <div className="grid grid-cols-4 gap-x-4 gap-y-2 text-sm">
+                  <div className="flex flex-col">
+                    <span className="text-red-600 font-semibold">{info.change}</span>
+                    <span style={{ color: '#384860' }} className="text-xs">前日比較</span>
                   </div>
-                  <div className="flex gap-2">
-                    <span style={{ color: '#384860' }}>高値</span>
-                    <span className="text-red-600">{latestPrice?.high || info.price}</span>
+                  <div className="flex flex-col">
+                    <span className="text-red-600 font-semibold">{latestPrice?.high || info.price}</span>
+                    <span style={{ color: '#384860' }} className="text-xs">高値</span>
                   </div>
-                  <div className="flex gap-2">
-                    <span style={{ color: '#384860' }}>始値</span>
-                    <span className="text-red-600">{latestPrice?.open || info.price}</span>
+                  <div className="flex flex-col">
+                    <span className="text-red-600 font-semibold">{latestPrice?.open || info.price}</span>
+                    <span style={{ color: '#384860' }} className="text-xs">始値</span>
                   </div>
-                  <div className="flex gap-2">
-                    <span style={{ color: '#384860' }}>安値</span>
-                    <span className="text-red-600">{latestPrice?.low || info.price}</span>
+                  <div className="flex flex-col">
+                    <span className="text-red-600 font-semibold">{latestPrice?.low || info.price}</span>
+                    <span style={{ color: '#384860' }} className="text-xs">安値</span>
                   </div>
-                  <div className="flex gap-2">
-                    <span style={{ color: '#384860' }}>終値</span>
-                    <span className="text-red-600">{latestPrice?.close || info.price}</span>
+                  <div className="flex flex-col">
+                    <span className="text-red-600 font-semibold">{latestPrice?.close || info.price}</span>
+                    <span style={{ color: '#384860' }} className="text-xs">終値</span>
                   </div>
-                  <div className="flex gap-2">
-                    <span style={{ color: '#384860' }}>PER</span>
-                    <span className="text-red-600">{info.per}</span>
+                  <div className="flex flex-col">
+                    <span className="text-red-600 font-semibold">{info.per}</span>
+                    <span style={{ color: '#384860' }} className="text-xs">PER</span>
                   </div>
-                  <div className="flex gap-2">
-                    <span style={{ color: '#384860' }}>前日取引</span>
-                    <span className="text-red-600">{latestPrice?.volume || 'N/A'}</span>
+                  <div className="flex flex-col">
+                    <span className="text-red-600 font-semibold">{latestPrice?.volume || 'N/A'}</span>
+                    <span style={{ color: '#384860' }} className="text-xs">前日取引</span>
                   </div>
-                  <div className="flex gap-2">
-                    <span style={{ color: '#384860' }}>配当利回り</span>
-                    <span className="text-red-600">{info.dividend}</span>
+                  <div className="flex flex-col">
+                    <span className="text-red-600 font-semibold">{info.dividend}</span>
+                    <span style={{ color: '#384860' }} className="text-xs">配当利回り</span>
                   </div>
                 </div>
               </div>
