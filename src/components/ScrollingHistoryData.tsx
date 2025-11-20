@@ -40,29 +40,21 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
     const changeNum = parseFloat(price.change);
     const isPositive = changeNum >= 0;
     const changeColor = isPositive ? 'text-red-600' : 'text-green-600';
-    const borderColor = isPositive ? 'border-red-200' : 'border-green-200';
 
     return (
-      <div
-        className={`rounded-2xl border-2 ${borderColor} p-4 shadow-sm`}
-        style={{ backgroundColor: '#fef9f5' }}
-      >
-        <div className="flex justify-center mb-3">
-          <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-6 py-1.5 rounded-full text-sm font-bold shadow-md">
-            株-{price.code || stockName} {price.date}
-          </div>
+      <div className="py-2">
+        <div className="flex justify-between items-center mb-1">
+          <span className="text-gray-800 font-medium text-sm">
+            株-{price.code}
+          </span>
+          <span className="text-gray-800 font-medium text-sm">
+            終値：{price.close} {stockName}
+          </span>
         </div>
-
-        <div className="text-center mb-3">
-          <div className="text-base font-medium text-gray-700 mb-1">
-            銘柄：{price.close}
-          </div>
-        </div>
-
-        <div className={`rounded-xl border-2 ${borderColor} p-3 text-center`}>
-          <div className="text-sm text-gray-600">
+        <div className="text-left">
+          <span className="text-gray-800 text-sm">
             前日比：<span className={`font-bold ${changeColor}`}>{formatChange(price.change, price.changePercent)}</span>
-          </div>
+          </span>
         </div>
       </div>
     );
@@ -70,8 +62,8 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
 
   return (
     <div className="px-4 py-2">
-      <div className="max-w-lg mx-auto">
-        <div className="space-y-3">
+      <div className="max-w-lg mx-auto bg-white/90 backdrop-blur-sm rounded-lg px-4 py-3">
+        <div className="divide-y divide-gray-200">
           {displayPrices.map((price, index) => (
             <div key={`${price.date}-${index}`}>
               {renderCard(price)}
@@ -79,11 +71,11 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
           ))}
         </div>
 
-        <div className="mt-3 text-center">
-          <p className="text-xs text-blue-300">
+        <div className="mt-3 text-center border-t border-gray-200 pt-3">
+          <p className="text-xs text-gray-600">
             データ出典: 公開市場情報 | 更新: 準リアルタイム
           </p>
-          <p className="text-xs text-blue-400 mt-1">
+          <p className="text-xs text-gray-500 mt-1">
             ※過去のデータは将来の結果を保証するものではありません
           </p>
         </div>
