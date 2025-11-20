@@ -37,7 +37,7 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
                   <span className={`text-lg font-bold ${changeColor}`}>{info.changePercent}</span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-x-8 gap-y-1.5 text-sm">
+                <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
                   <div className="flex gap-2">
                     <span style={{ color: '#384860' }}>前日比較</span>
                     <span className="text-red-600">{info.change}</span>
