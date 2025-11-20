@@ -376,21 +376,21 @@ export default function NewHome() {
             />
 
             <div className="px-4 py-6">
-              <div className="max-w-lg mx-auto">
+              <div className="max-w-lg mx-auto px-2">
                 <img
                   src="/foot.png"
                   alt="Services"
-                  className="w-full h-auto"
+                  className="w-full h-auto rounded-lg"
                 />
               </div>
             </div>
 
             <div className="px-4 py-4">
-              <div className="max-w-lg mx-auto relative">
+              <div className="max-w-lg mx-auto relative px-2">
                 <img
                   src="/footer.png"
                   alt="Footer"
-                  className="w-full h-auto"
+                  className="w-full h-auto rounded-lg"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="grid grid-cols-4 gap-2 sm:gap-4 text-center w-full px-4">
