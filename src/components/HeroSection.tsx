@@ -43,7 +43,7 @@ export default function HeroSection({ stockCode = '----', stockName = '', onDiag
               style={{
                 fontFamily: "'HYYaKuHeiW', 'Kozuka Gothic Pr6N', 'Noto Sans JP', sans-serif",
                 color: '#ef4444',
-                fontSize: '2rem',
+                fontSize: '3rem',
                 textShadow: '2px 2px 0 #ffffff, -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff'
               }}
             >
