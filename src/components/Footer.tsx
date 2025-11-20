@@ -9,7 +9,24 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 py-6">
         {/* Footer Links Section */}
         <div className="border-t-2 border-blue-500/20 pt-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-6">
+          {/* Service Information - Top Section on Mobile */}
+          <div className="mb-6">
+            <h4 className="font-bold text-blue-200 mb-3 flex items-center gap-2 text-sm">
+              <Info className="w-4 h-4" />
+              サービス情報
+            </h4>
+            <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs sm:text-sm text-blue-300">
+              <span className="font-semibold">株式会社集英社インターナショナル</span>
+              <span>AI株式診断サービス</span>
+              <span>リアルタイム株価情報</span>
+              <span>テクニカル分析</span>
+              <span>銘柄スクリーニング</span>
+              <span className="text-[11px] w-full mt-1">データ提供: 公開市場情報</span>
+            </div>
+          </div>
+
+          {/* Two Column Layout for Mobile, Three Columns for Desktop */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-6">
             {/* Legal Documents */}
             <div>
               <h4 className="font-bold text-blue-200 mb-3 flex items-center gap-2 text-sm">
@@ -88,21 +105,8 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Service Information */}
-            <div>
-              <h4 className="font-bold text-blue-200 mb-3 flex items-center gap-2 text-sm">
-                <Info className="w-4 h-4" />
-                サービス情報
-              </h4>
-              <ul className="space-y-2 text-xs sm:text-sm text-blue-300">
-                <li className="font-semibold">株式会社集英社インターナショナル</li>
-                <li>AI株式診断サービス</li>
-                <li>リアルタイム株価情報</li>
-                <li>テクニカル分析</li>
-                <li>銘柄スクリーニング</li>
-                <li className="text-[11px] mt-2">データ提供: 公開市場情報</li>
-              </ul>
-            </div>
+            {/* Empty Third Column on Desktop (Service Info shown at top) */}
+            <div className="hidden md:block"></div>
           </div>
 
           {/* Copyright Section */}
