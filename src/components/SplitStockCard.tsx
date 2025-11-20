@@ -25,109 +25,45 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
     <div className="px-4 py-2">
       <div className="max-w-lg mx-auto">
         <div className="px-6 py-8">
-            <div className="flex gap-3">
-              <div className="flex-1" style={{ width: '50%' }}>
-                <div className="text-sm text-blue-300 font-bold mb-1 whitespace-nowrap">
-                  {info.name} ({info.code}) {latestPrice?.date || info.timestamp}
-                </div>
-                <div className="flex items-baseline gap-2 mb-3">
-                  <span className={`text-4xl font-black ${changeColor}`}>{info.price}</span>
-                  <span className={`text-lg font-bold ${changeColor}`}>{info.change}</span>
-                  <span className={`text-lg font-bold ${changeColor}`}>{info.changePercent}</span>
-                </div>
+          <div className="text-center mb-2" style={{ color: '#4a9ebb', fontSize: '0.9rem' }}>
+            {latestPrice?.date || info.timestamp}
+          </div>
+          <div className="text-center mb-3" style={{ color: '#4a9ebb', fontSize: '1.1rem', fontWeight: 'bold' }}>
+            {info.name} ({info.code})
+          </div>
 
-                <div className="grid grid-cols-2 gap-x-2 gap-y-2 text-sm">
-                  <div className="flex flex-col">
-                    <span className="text-red-600 font-semibold">{info.change}</span>
-                    <span style={{ color: '#384860' }} className="text-xs">前日比較</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-red-600 font-semibold">{latestPrice?.high || info.price}</span>
-                    <span style={{ color: '#384860' }} className="text-xs">高値</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-red-600 font-semibold">{latestPrice?.open || info.price}</span>
-                    <span style={{ color: '#384860' }} className="text-xs">始値</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-red-600 font-semibold">{latestPrice?.low || info.price}</span>
-                    <span style={{ color: '#384860' }} className="text-xs">安値</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-red-600 font-semibold">{latestPrice?.close || info.price}</span>
-                    <span style={{ color: '#384860' }} className="text-xs">終値</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-red-600 font-semibold">{info.per}</span>
-                    <span style={{ color: '#384860' }} className="text-xs">PER</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-red-600 font-semibold">{latestPrice?.volume || 'N/A'}</span>
-                    <span style={{ color: '#384860' }} className="text-xs">前日取引</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-red-600 font-semibold">{info.dividend}</span>
-                    <span style={{ color: '#384860' }} className="text-xs">配当利回り</span>
-                  </div>
-                </div>
-              </div>
+          <div className="flex items-baseline justify-center gap-2 mb-4">
+            <span className={`font-black ${changeColor}`} style={{ fontSize: '2.5rem' }}>{info.price}</span>
+            <span className={`font-bold ${changeColor}`} style={{ fontSize: '1.2rem' }}>{info.change}</span>
+            <span className={`font-bold ${changeColor}`} style={{ fontSize: '1.2rem' }}>{info.changePercent}</span>
+          </div>
 
-              <div className="flex flex-col justify-center" style={{ width: '50%' }}>
-                <svg width="100%" height="100%" viewBox="0 0 120 80" preserveAspectRatio="none">
-                  <defs>
-                    <linearGradient id={`gradient-${isPositive ? 'up' : 'down'}`} x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" style={{ stopColor: chartColor, stopOpacity: 0.3 }} />
-                      <stop offset="100%" style={{ stopColor: chartColor, stopOpacity: 0 }} />
-                    </linearGradient>
-                  </defs>
-
-                  {isPositive ? (
-                    <>
-                      <polyline
-                        points="10,60 30,50 45,55 60,45 75,40 90,35 105,25"
-                        fill="none"
-                        stroke={chartColor}
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <polygon
-                        points="10,60 30,50 45,55 60,45 75,40 90,35 105,25 105,70 10,70"
-                        fill={`url(#gradient-up)`}
-                      />
-                      <polygon
-                        points="105,15 115,25 105,25"
-                        fill={chartColor}
-                      />
-                    </>
-                  ) : (
-                    <>
-                      <polyline
-                        points="10,20 30,30 45,25 60,35 75,40 90,45 105,55"
-                        fill="none"
-                        stroke={chartColor}
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <polygon
-                        points="10,20 30,30 45,25 60,35 75,40 90,45 105,55 105,10 10,10"
-                        fill={`url(#gradient-down)`}
-                      />
-                      <polygon
-                        points="105,65 115,55 105,55"
-                        fill={chartColor}
-                      />
-                    </>
-                  )}
-
-                  <rect x="10" y="73" width="8" height="5" fill="#fbbf24" />
-                  <rect x="25" y="70" width="8" height="8" fill="#fbbf24" />
-                  <rect x="40" y="68" width="8" height="10" fill="#fb923c" />
-                  <rect x="55" y="65" width="8" height="13" fill="#f97316" />
-                </svg>
-              </div>
+          <div className="flex flex-col gap-1 text-base">
+            <div className="flex justify-between items-center px-4">
+              <span style={{ color: '#4a6b8a', fontWeight: 500 }}>最終値を調整する</span>
+              <span className="text-red-600 font-semibold">{latestPrice?.close || info.price}</span>
             </div>
+            <div className="flex justify-between items-center px-4">
+              <span style={{ color: '#4a6b8a', fontWeight: 500 }}>売買高</span>
+              <span className="text-red-600 font-semibold">{latestPrice?.volume || 'N/A'}</span>
+            </div>
+            <div className="flex justify-between items-center px-4">
+              <span style={{ color: '#4a6b8a', fontWeight: 500 }}>初期値</span>
+              <span className="text-red-600 font-semibold">{latestPrice?.open || info.price}</span>
+            </div>
+            <div className="flex justify-between items-center px-4">
+              <span style={{ color: '#4a6b8a', fontWeight: 500 }}>高価値</span>
+              <span className="text-red-600 font-semibold">{latestPrice?.high || info.price}</span>
+            </div>
+            <div className="flex justify-between items-center px-4">
+              <span style={{ color: '#4a6b8a', fontWeight: 500 }}>一昨日の終わり</span>
+              <span className="text-red-600 font-semibold">{info.change}</span>
+            </div>
+            <div className="flex justify-between items-center px-4">
+              <span style={{ color: '#4a6b8a', fontWeight: 500 }}>値</span>
+              <span className="text-red-600 font-semibold">{latestPrice?.low || info.price}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
