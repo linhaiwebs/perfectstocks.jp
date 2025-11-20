@@ -41,7 +41,7 @@ export default function HeroSection({ stockCode = '----', stockName = '', onDiag
       <div className="w-full px-4 py-6 flex flex-col items-center">
         <div className="w-full max-w-4xl mx-auto mb-8">
 
-          <div className="text-center" style={{ marginTop: '160px' }}>
+          <div className="text-center" style={{ marginTop: '60px' }}>
             <h2
               className="font-bold whitespace-nowrap"
               style={{
@@ -55,7 +55,7 @@ export default function HeroSection({ stockCode = '----', stockName = '', onDiag
             </h2>
           </div>
 
-          <div className="flex justify-center px-4 mt-6">
+          <div className="flex justify-center px-4 mt-3">
             <div className="max-w-lg w-full">
               <button
                 onClick={onDiagnosis}
