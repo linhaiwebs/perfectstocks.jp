@@ -9,7 +9,7 @@ export default function ModernBackground({ children, className = "" }: ModernBac
       className={`min-h-screen relative ${className}`}
       style={{
         backgroundImage: 'url(/back.png)',
-        backgroundSize: '100% 100%',
+        backgroundSize: 'cover',
         backgroundPosition: 'top center',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'scroll'
