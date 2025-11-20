@@ -51,7 +51,10 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
             終値：{price.close} {stockName}
           </span>
         </div>
-        <div className="text-left">
+        <div className="flex justify-between items-center">
+          <span className="text-gray-800 text-sm">
+            {price.date}
+          </span>
           <span className="text-gray-800 text-sm">
             前日比：<span className={`font-bold ${changeColor}`}>{formatChange(price.change, price.changePercent)}</span>
           </span>
