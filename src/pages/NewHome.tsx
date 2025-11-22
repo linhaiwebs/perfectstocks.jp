@@ -187,7 +187,7 @@ export default function NewHome() {
       }
 
       if (!response.ok) {
-        throw new Error('AI診断に失敗しました');
+        throw new Error('AI市場分析に失敗しました');
       }
 
       setDiagnosisState('processing');
@@ -260,7 +260,7 @@ export default function NewHome() {
         const result = await response.json();
 
         if (!result.analysis || result.analysis.trim() === '') {
-          throw new Error('診断結果が生成されませんでした');
+          throw new Error('分析結果が生成されませんでした');
         }
 
         setAnalysisResult(result.analysis);
@@ -275,7 +275,7 @@ export default function NewHome() {
       }
     } catch (err) {
       console.error('Diagnosis error:', err);
-      let errorMessage = '診断中にエラーが発生しました';
+      let errorMessage = '分析中にエラーが発生しました';
 
       if (err instanceof Error) {
         if (err.name === 'AbortError') {
@@ -341,6 +341,11 @@ export default function NewHome() {
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
     }}>
+      <div className="bg-gradient-to-r from-amber-500 to-orange-500 py-2 px-4 text-center sticky top-0 z-50 shadow-lg">
+        <p className="text-sm font-bold text-white">
+          ⚠️ 本サービスは教育・学習用の参考情報提供ツールです | 投資助言・投資勧誘ではありません | 投資判断は必ずご自身の責任で行ってください
+        </p>
+      </div>
       <HeroSection
         stockCode={stockCode}
         stockName={stockData?.info.name}
@@ -393,7 +398,7 @@ export default function NewHome() {
         {diagnosisState === 'error' && (
           <div className="text-center py-12 sm:py-16 md:py-20 px-4">
             <div className="max-w-2xl mx-auto p-5 sm:p-6 md:p-8 bg-accent-red/20 backdrop-blur-sm border border-accent-red rounded-2xl shadow-red-glow">
-              <h3 className="text-lg sm:text-xl font-bold text-accent-red mb-3 sm:mb-4">診断エラー</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-accent-red mb-3 sm:mb-4">分析エラー</h3>
               <p className="text-sm sm:text-base text-gray-300 font-semibold mb-5 sm:mb-6">{error}</p>
               <button
                 onClick={() => {

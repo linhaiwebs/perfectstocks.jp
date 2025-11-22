@@ -7,7 +7,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ stockCode = '----', stockName = '', onDiagnosis, disabled = false }: HeroSectionProps) {
   const hasStockData = stockCode !== '----' && stockName;
-  const buttonText = stockName ? `【${stockName}】の情報を表示` : '銘柄情報を表示';
+  const buttonText = stockName ? `【${stockName}】の市場データを表示（参考）` : '銘柄市場データを表示（参考）';
 
   return (
     <div className="relative w-full">
@@ -51,8 +51,11 @@ export default function HeroSection({ stockCode = '----', stockName = '', onDiag
                 textShadow: '2px 2px 0 #ffffff, -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff'
               }}
             >
-              銘柄無料診断
+              銘柄市場分析（参考）
             </h2>
+            <p className="text-xs text-white mt-2 bg-black/40 px-3 py-1 rounded-full inline-block">
+              ※本サービスは教育・学習用ツールであり、投資助言ではありません
+            </p>
           </div>
 
           <div className="flex justify-center px-4 mt-3">

@@ -25,6 +25,11 @@ export default function SplitStockCard({ info, latestPrice }: SplitStockCardProp
     <div className="px-4 py-2">
       <div className="max-w-lg mx-auto">
         <div className="px-6 py-8">
+          <div className="bg-blue-50 border-l-4 border-blue-500 px-3 py-2 mb-3 rounded">
+            <p className="text-xs text-blue-900 font-semibold">
+              📊 データ出典: 公開市場情報 | 学習・参考用
+            </p>
+          </div>
           <div className="text-center mb-2" style={{ color: '#4a9ebb', fontSize: '0.9rem' }}>
             {latestPrice?.date || info.timestamp}
           </div>

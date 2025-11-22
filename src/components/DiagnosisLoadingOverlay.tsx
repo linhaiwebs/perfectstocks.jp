@@ -76,7 +76,8 @@ export default function DiagnosisLoadingOverlay({
 
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600 mb-2 text-center">市場データ分析中</h3>
-              <p className="text-sm font-semibold text-pink-700 text-center">参考情報を生成しています...</p>
+              <p className="text-sm font-semibold text-pink-700 text-center">学習用参考資料を生成しています...</p>
+              <p className="text-xs text-amber-700 mt-1 text-center font-bold">※投資助言ではありません</p>
             </div>
 
             <div className="relative w-full h-4 bg-gradient-to-r from-pink-100 to-rose-100 rounded-full overflow-hidden mb-3 border-2 border-pink-300 shadow-inner">

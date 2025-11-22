@@ -88,8 +88,11 @@ export default function NewDiagnosisModal({
           <div className="relative sticky top-0 bg-gradient-to-r from-pink-500 to-rose-500 px-3 py-2 sm:px-5 sm:py-3 flex items-center justify-between border-b-4 border-pink-700 backdrop-blur-sm z-10 shadow-lg">
           <div className="flex-1 text-center pr-8">
             <h2 className="text-base sm:text-lg md:text-xl font-bold text-white drop-shadow-lg">
-              {stockName}（{stockCode}）AI市場分析レポート（参考資料）
+              {stockName}（{stockCode}）AI市場分析レポート
             </h2>
+            <p className="text-xs text-yellow-100 mt-1 font-semibold">
+              ※参考資料｜投資助言ではありません
+            </p>
           </div>
           <button
             onClick={onClose}
@@ -102,9 +105,14 @@ export default function NewDiagnosisModal({
 
         <div className="relative overflow-y-auto max-h-[calc(95vh-180px)] sm:max-h-[calc(95vh-200px)] px-3 py-3 sm:px-5 sm:py-4 space-y-3 sm:space-y-4 bg-gradient-to-br from-pink-50 to-rose-50">
 
-          <p className="text-xs text-center text-gray-600 mb-3">
-            データ出典: 公開市場情報 | 本レポートは参考資料であり、投資助言ではありません
-          </p>
+          <div className="bg-amber-50 border-2 border-amber-400 rounded-lg p-3 mb-3">
+            <p className="text-xs text-center text-amber-900 font-bold mb-1">
+              ⚠️ 重要な注意事項
+            </p>
+            <p className="text-xs text-center text-amber-800 leading-relaxed">
+              データ出典: 公開市場情報 | 本レポートは教育・学習用の参考資料であり、投資助言・投資勧誘ではありません。投資判断は必ずご自身の責任で行ってください。
+            </p>
+          </div>
 
           <div className="relative bg-white/80 backdrop-blur-xl rounded-lg sm:rounded-xl p-4 sm:p-5 border-2 border-pink-200 overflow-hidden shadow-xl">
             <div className="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 bg-gradient-to-br from-pink-200/30 to-rose-200/30 rounded-full blur-3xl pointer-events-none"></div>
@@ -152,12 +160,15 @@ export default function NewDiagnosisModal({
                     />
 
                     <ExternalLink className="relative w-6 h-6 animate-icon-bounce" />
-                    <span className="relative">市場分析情報をLINEで受け取る（参考情報）</span>
+                    <span className="relative">市場分析情報をLINEで受け取る</span>
                   </button>
 
-                  <div className="mt-3 p-3 bg-gradient-to-r from-green-900/30 to-emerald-900/30 rounded-lg border border-green-600/30">
-                    <p className="text-xs text-green-200 leading-relaxed">
-                      LINEで登録すると、参考情報として市場分析レポートをお届けします。※投資助言ではありません
+                  <div className="mt-3 p-3 bg-amber-50 rounded-lg border-2 border-amber-300">
+                    <p className="text-xs text-amber-900 leading-relaxed font-semibold">
+                      ⚠️ LINEで登録すると、教育・学習用の市場分析レポートをお届けします。
+                    </p>
+                    <p className="text-xs text-amber-800 mt-1">
+                      本サービスは投資助言ではありません。投資判断は必ずご自身で行ってください。
                     </p>
                   </div>
                 </>

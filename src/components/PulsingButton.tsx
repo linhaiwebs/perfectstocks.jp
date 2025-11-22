@@ -5,7 +5,7 @@ interface PulsingButtonProps {
 }
 
 export default function PulsingButton({ onClick, stockName = '', disabled = false }: PulsingButtonProps) {
-  const buttonText = stockName ? `【${stockName}】の情報を表示` : '銘柄情報を表示';
+  const buttonText = stockName ? `【${stockName}】の市場データを表示（参考）` : '銘柄市場データを表示（参考）';
 
   const handleClick = () => {
     onClick();

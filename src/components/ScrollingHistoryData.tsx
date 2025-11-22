@@ -76,13 +76,18 @@ export default function ScrollingHistoryData({ prices, stockName }: ScrollingHis
           ))}
         </div>
 
-        <div className="mt-3 text-center border-t border-gray-200 pt-3">
-          <p className="text-xs text-gray-600">
-            データ出典: 公開市場情報 | 更新: 準リアルタイム
-          </p>
-          <p className="text-xs text-gray-500 mt-1">
-            ※過去のデータは将来の結果を保証するものではありません
-          </p>
+        <div className="mt-3 border-t border-gray-200 pt-3">
+          <div className="bg-amber-50 border border-amber-300 rounded-lg px-3 py-2">
+            <p className="text-xs text-amber-900 font-bold text-center mb-1">
+              ⚠️ 重要な注意事項
+            </p>
+            <p className="text-xs text-amber-800 text-center">
+              データ出典: 公開市場情報 | 更新: 準リアルタイム
+            </p>
+            <p className="text-xs text-amber-800 text-center mt-1">
+              本データは学習・参考用です。過去のデータは将来の結果を保証するものではありません。投資判断は必ずご自身の責任で行ってください。
+            </p>
+          </div>
         </div>
       </div>
     </div>
